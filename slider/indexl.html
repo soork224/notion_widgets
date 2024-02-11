@@ -660,6 +660,7 @@ body {
     <button id="next"><i class="fas fa-arrow-right"></i></button>
   </div>
   <!-- partial -->
+ <!-- partial -->
   <script>
     const slides = document.querySelectorAll(".slide");
     const nextButton = document.getElementById("next");
@@ -669,57 +670,57 @@ body {
     let slideInterval;
 
     const nextSlide = () => {
-      const current = document.querySelector(".current");
-      current.classList.remove("current");
-      if (current.nextElementSibling) {
-        current.nextElementSibling.classList.add("current");
-      } else {
-        slides[0].classList.add("current");
-      }
-      randomizeSlides();
+        const current = document.querySelector(".current");
+        current.classList.remove("current");
+        if (current.nextElementSibling) {
+            current.nextElementSibling.classList.add("current");
+        } else {
+            slides[0].classList.add("current");
+        }
+        randomizeSlides();
     };
 
     const prevSlide = () => {
-      const current = document.querySelector(".current");
-      current.classList.remove("current");
-      if (current.previousElementSibling) {
-        current.previousElementSibling.classList.add("current");
-      } else {
-        slides[slides.length - 1].classList.add("current");
-      }
-      randomizeSlides();
+        const current = document.querySelector(".current");
+        current.classList.remove("current");
+        if (current.previousElementSibling) {
+            current.previousElementSibling.classList.add("current");
+        } else {
+            slides[slides.length - 1].classList.add("current");
+        }
+        randomizeSlides();
     };
-    
+
     const randomizeSlides = () => {
         slides.forEach(slide => {
             slide.style.order = Math.floor(Math.random() * slides.length);
         });
-      };
+    };
 
     nextButton.addEventListener("click", () => {
-      nextSlide();
-      if (auto) {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, intervalTime);
-      }
+        nextSlide();
+        if (auto) {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, intervalTime);
+        }
     });
     prevButton.addEventListener("click", () => {
-      prevSlide();
-      if (auto) {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, intervalTime);
-      }
+        prevSlide();
+        if (auto) {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, intervalTime);
+        }
     });
 
     if (auto) {
-      slideInterval = setInterval(nextSlide, intervalTime);
-      
+        slideInterval = setInterval(nextSlide, intervalTime);
     }
-   
-   randomizeSlides();
 
-  </script>
+    randomizeSlides();
+
+</script>
 
 </body>
 
 </html>
+
