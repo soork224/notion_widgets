@@ -687,14 +687,14 @@ body {
       } else {
         slides[slides.length - 1].classList.add("current");
       }
-        randomizeSlides();
+      randomizeSlides();
     };
     
     const randomizeSlides = () => {
         slides.forEach(slide => {
             slide.style.order = Math.floor(Math.random() * slides.length);
         });
-       };
+      
 
     nextButton.addEventListener("click", () => {
       nextSlide();
