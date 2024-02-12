@@ -586,7 +586,7 @@ body {
             current.nextElementSibling.classList.add("current");
         } else { slides.forEach(slide => {
     const randomizeSlides = Math.floor(Math.random() * slides.length);
-    slide.style.order = randomOrder;
+    slide.style.order = randomizeSlides;
 });
             slides[0].classList.add("current");
         }
