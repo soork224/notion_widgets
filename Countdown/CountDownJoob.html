@@ -20,7 +20,7 @@ body{
   letter-spacing: 5px;
 }
 
-.jours, .hours, .minutes, .seconds {
+.jours, .heures, .minutes, .secondes {
   display: inline-block;
   padding: 20px;
   width: 100px;
@@ -31,7 +31,7 @@ body{
   background: #AD2831;
 }
 
-.hours {
+.heures {
   background: #800E13;
   color: #183059;
 }
@@ -40,7 +40,7 @@ body{
   background: #640D14;
 }
 
-.seconds {
+.secondes {
   background: #38040E;
 }
 
@@ -90,12 +90,12 @@ body{
 
     <div class="jours"> 
         <div id="jours" class="numbers "> </div>jours</div> 
-      <div class="hours"> 
-        <div  id="hours" class="numbers"> </div>hours</div> 
+      <div class="heures"> 
+        <div  id="heures" class="numbers"> </div>heures</div> 
       <div class="minutes"> 
         <div  id="minutes" class="numbers"> </div>minutes</div> 
-      <div   class="seconds"> 
-        <div id="seconds" class="numbers"> </div>seconds</div> 
+      <div   class="secondes"> 
+        <div id="secondes" class="numbers"> </div>secondes</div> 
       </div>
 
 </div>
@@ -117,15 +117,15 @@ let timer = setInterval(function() {
 
   // math
   let jours = Math.floor(diff / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let heures = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  let secondes = Math.floor((diff % (1000 * 60)) / 1000);
 
   // display
   document.getElementById("jours").innerHTML=jours
-  document.getElementById("hours").innerHTML=hours
+  document.getElementById("heures").innerHTML=heures
   document.getElementById("minutes").innerHTML=minutes
-  document.getElementById("seconds").innerHTML=seconds
+  document.getElementById("secondes").innerHTML=secondes
 
 
 
