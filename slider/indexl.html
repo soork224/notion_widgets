@@ -580,12 +580,12 @@ body {
     let slideInterval;
 
     const nextSlide = () => {
-        const current = document.querySelector("current");
+        const current = document.querySelector(".current");
         current.classList.remove("current");
         if (current.nextElementSibling) {
             current.nextElementSibling.classList.add("current");
         } else { slides.forEach(slide => {
-    const randomOrder = Math.floor(Math.random() * slides.length);
+    const randomizeSlides = Math.floor(Math.random() * slides.length);
     slide.style.order = randomOrder;
 });
             slides[0].classList.add("current");
