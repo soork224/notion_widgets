@@ -579,8 +579,6 @@ body {
     const intervalTime = 9000;
     let slideInterval;
 
-    const randomizeSlides = Math.floor(Math.random() * slides.length);
-
     const nextSlide = () => {
         const current = document.querySelector(".current");
         current.classList.remove("current");
