@@ -27,35 +27,29 @@ body{
   border-radius: 5px;
 }
 
-        
-        
 .semaines {
-  background: #AD2831;
+  background: #F94144; /* Rouge clair */
 }
 
 .mois {
-  background: #AD2831;
+  background: #F3722C; /* Rouge */
 }
 
-
-        
-        
-        
 .jours {
-  background: #AD2831;
+  background: #F8961E; /* Orange */
 }
 
 .heures {
-  background: #800E13;
+  background: #F9C74F; /* Jaune */
   color: #FFFFFF;
 }
 
 .minutes {
-  background: #640D14;
+  background: #F9C74F; /* Jaune */
 }
 
 .secondes {
-  background: #38040E;
+  background: #38040E; /* Rouge foncé */
 }
 
 .numbers {
@@ -81,7 +75,6 @@ body{
   top: 9%;
   height: 65px;
   width: 70px;
- 
 }
 
 .blue {
@@ -91,8 +84,6 @@ body{
   width: 80px;
   left: 60%;
   top: 5%;
-
-
 }
 
 
@@ -101,17 +92,18 @@ body{
 <body>
     
 <div id="timer">
-
+    <div class="mois"> 
+        <div id="mois" class="numbers "> </div>mois</div>
+    <div class="semaines"> 
+        <div id="semaines" class="numbers "> </div>semaines</div>
     <div class="jours"> 
         <div id="jours" class="numbers "> </div>jours</div> 
-      <div class="heures"> 
-        <div  id="heures" class="numbers"> </div>heures</div> 
-      <div class="minutes"> 
-        <div  id="minutes" class="numbers"> </div>minutes</div> 
-      <div   class="secondes"> 
+    <div class="heures"> 
+        <div id="heures" class="numbers"> </div>heures</div> 
+    <div class="minutes"> 
+        <div id="minutes" class="numbers"> </div>minutes</div> 
+    <div class="secondes"> 
         <div id="secondes" class="numbers"> </div>secondes</div> 
-      </div>
-
 </div>
 
 </body>
@@ -130,18 +122,20 @@ let timer = setInterval(function() {
   const diff = myDate - today;
 
   // math
+  let mois = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44)); // moyenne des jours dans un mois
+  let semaines = Math.floor(diff / (1000 * 60 * 60 * 24 * 7));
   let jours = Math.floor(diff / (1000 * 60 * 60 * 24));
   let heures = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   let secondes = Math.floor((diff % (1000 * 60)) / 1000);
 
   // display
-  document.getElementById("jours").innerHTML=jours
-  document.getElementById("heures").innerHTML=heures
-  document.getElementById("minutes").innerHTML=minutes
-  document.getElementById("secondes").innerHTML=secondes
-
-
+  document.getElementById("mois").innerHTML=mois;
+  document.getElementById("semaines").innerHTML=semaines;
+  document.getElementById("jours").innerHTML=jours;
+  document.getElementById("heures").innerHTML=heures;
+  document.getElementById("minutes").innerHTML=minutes;
+  document.getElementById("secondes").innerHTML=secondes;
 
 }, 1);
 </script>
