@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900">
+    <title>Document</title>
+    <style>
+
+body{
+    background-color: Black;
+}
+  
+#timer {
+  color: #eeeeee;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-size: .7em;
+  letter-spacing: 5px;
+}
+
+.mois, .semaines, .jours, .heures, .minutes, .secondes {
+  display: inline-block;
+  padding: 20px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.semaines, .mois {
+  background: #AD2831;
+}
+
+.jours {
+  background: #AD2831;
+}
+
+.heures {
+  background: #800E13;
+  color: #FFFFFF;
+}
+
+.minutes {
+  background: #640D14;
+}
+
+.secondes {
+  background: #38040E;
+}
+
+.numbers {
+  font-family: 'Montserrat', sans-serif;
+  color:  #FFFFFF;
+  font-size: 4em;
+  text-align: center;
+}
+
+.white {
+  position: absolute;
+  background:  #eeeeee;
+  height: 85px;
+  width: 75px;
+  left: 30%;
+  top: 2%;
+}
+
+.red {
+  position: absolute;
+  background:  #EF2F3C;
+  left: 18%;
+  top: 9%;
+  height: 65px;
+  width: 70px;
+}
+
+.blue {
+  position: absolute;
+  background:  #276FBF;
+  height: 80px;
+  width: 80px;
+  left: 60%;
+  top: 5%;
+}
+
+    </style>
+</head>
+<body>
+    
+<div id="timer">
+    <div class="mois"> 
+        <div id="mois" class="numbers "> </div>mois</div>
+    <div class="semaines"> 
+        <div id="semaines" class="numbers "> </div>semaines</div>
+    <div class="jours"> 
+        <div id="jours" class="numbers "> </div>jours</div> 
+    <div class="heures"> 
+        <div id="heures" class="numbers"> </div>heures</div> 
+    <div class="minutes"> 
+        <div id="minutes" class="numbers"> </div>minutes</div> 
+    <div class="secondes"> 
+        <div id="secondes" class="numbers"> </div>secondes</div> 
+</div>
+
+</body>
+<script>
+    const year = new Date().getFullYear();
+const myDate = new Date('Aug 01, 2024 00:00:00');
+console.log(myDate);
+
+// countdown
+let timer = setInterval(function() {
+
+  // get today's date
+  const today = new Date().getTime();
+
+  // get the difference
+  const diff = myDate - today;
+
+  // math
+  let mois = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44)); // moyenne des jours dans un mois
+  let semaines = Math.floor(diff / (1000 * 60 * 60 * 24 * 7));
+  let jours = Math.floor(diff / (1000 * 60 * 60 * 24));
+  let heures = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  let secondes = Math.floor((diff % (1000 * 60)) / 1000);
+
+  // display
+  document.getElementById("mois").innerHTML=mois;
+  document.getElementById("semaines").innerHTML=semaines;
+  document.getElementById("jours").innerHTML=jours;
+  document.getElementById("heures").innerHTML=heures;
+  document.getElementById("minutes").innerHTML=minutes;
+  document.getElementById("secondes").innerHTML=secondes;
+
+}, 1);
+</script>
+</html>
