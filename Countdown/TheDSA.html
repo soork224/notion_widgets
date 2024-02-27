@@ -48,6 +48,12 @@
         const remainingDays = Math.ceil((futureDate - today) / (24 * 60 * 60 * 1000));
 
         document.getElementById("jours").innerHTML = remainingDays;
+// Mettez à jour tous les jours (86400000 millisecondes représentent un jour)
+        setInterval(updateDaysRemaining, 86400000);
+        
+        // Appelez la fonction une fois au début pour afficher le nombre initial de jours
+        updateDaysRemaining();
+        
     </script>
 </body>
 </html>
