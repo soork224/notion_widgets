@@ -44,7 +44,7 @@
 
     <script>
         const today = new Date();
-        const futureDate = new Date(today.getTime() + 53 * 24 * 60 * 60 * 1000); // 53 days later
+        const futureDate = new Date(today.getTime() + 50 * 24 * 60 * 60 * 1000); // 53 days later
         const remainingDays = Math.ceil((futureDate - today) / (24 * 60 * 60 * 1000));
 
         document.getElementById("jours").innerHTML = remainingDays;
