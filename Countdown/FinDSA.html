@@ -20,13 +20,16 @@ body{
   letter-spacing: 5px;
 }
 
- .semaines, .jours, .heures,  {
+.mois, .semaines, .jours, .heures, .minutes, .secondes {
   display: inline-block;
   padding: 20px;
   width: 100px;
   border-radius: 5px;
 }
 
+.mois {
+  background: #A92831; /* Rouge foncé */
+}
 
 .semaines {
   background: #7D0E13; /* Rouge sombre */
@@ -39,6 +42,15 @@ body{
 .heures {
   background: #37040E; /* Rouge sombre */
   color: #FFFFFF;
+}
+
+.minutes {
+  background: #240902; /* Rouge foncé */
+}
+
+.secondes {
+  background: #000000; /* Noir */
+}
 
 .numbers {
   font-family: 'Montserrat', sans-serif;
@@ -80,14 +92,18 @@ body{
 <body>
     
 <div id="timer">
-
+    <div class="mois"> 
+        <div id="mois" class="numbers "> </div>mois</div>
     <div class="semaines"> 
         <div id="semaines" class="numbers "> </div>semaines</div>
     <div class="jours"> 
         <div id="jours" class="numbers "> </div>jours</div> 
     <div class="heures"> 
         <div id="heures" class="numbers"> </div>heures</div> 
-  
+    <div class="minutes"> 
+        <div id="minutes" class="numbers"> </div>minutes</div> 
+    <div class="secondes"> 
+        <div id="secondes" class="numbers"> </div>secondes</div> 
 </div>
 
 </body>
@@ -117,9 +133,7 @@ let timer = setInterval(function() {
   document.getElementById("mois").innerHTML=mois;
   document.getElementById("semaines").innerHTML=semaines;
   document.getElementById("jours").innerHTML=jours;
-  document.getElementById("heures").innerHTML=heures;
-  document.getElementById("minutes").innerHTML=minutes;
-  document.getElementById("secondes").innerHTML=secondes;
+ 
 
 }, 1);
 </script>
